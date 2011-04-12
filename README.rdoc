@@ -27,3 +27,7 @@ Please see examples.rb for usage examples
 == Feedback
 
 Bug reports, feature requests and patches are welcome.  Please create an issue on the github issue tracker.
+
+== License
+
+MIT License. Copyright 2011 Ahmed Adam 
