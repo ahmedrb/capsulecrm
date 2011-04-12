@@ -1,0 +1,28 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: https://[API-TOKEN]:x@[ACCOUNT-NAME].capsulecrm.com:443/api/party?
+    body: 
+    headers: 
+      user-agent: 
+      - CapsuleCRM ruby gem
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      content-type: 
+      - "*/*"
+      server: 
+      - Apache
+      date: 
+      - Tue, 12 Apr 2011 12:31:18 GMT
+      content-length: 
+      - "3305"
+      set-cookie: 
+      - "[SESSION-COOKIE]"
+    body: |-
+      <?xml version="1.0" encoding="UTF-8" standalone="yes"?><parties size="8"><person><id>9719416</id><contacts><email><id>17716757</id><emailAddress>at@example.com</emailAddress></email></contacts><pictureURL>https://d365sd3k9yw37.cloudfront.net/a/543325/theme/default/images/person_avatar_70.png</pictureURL><title>Prof</title><firstName>Alan</firstName><lastName>Turing</lastName></person><person><id>10185304</id><contacts><email><id>18565226</id><emailAddress>cd@example.com</emailAddress></email></contacts><pictureURL>https://d365sd3k9yw37.cloudfront.net/a/543325/theme/default/images/person_avatar_70.png</pictureURL><title>Dr</title><firstName>Charles</firstName><lastName>Darwin</lastName></person><person><id>10185257</id><contacts><address><id>18565068</id><type>Office</type><street>10 Downing Street</street><city>London</city><zip>SW1A 2AA</zip><country>United Kingdom</country></address><email><id>18565066</id><type>Work</type><emailAddress>pm@example.com</emailAddress></email><phone><id>18566503</id><phoneNumber>12345 67890</phoneNumber></phone><website><id>18565067</id><webAddress>http://www.number10.gov.uk/</webAddress><webService>URL</webService><url>http://www.number10.gov.uk/</url></website></contacts><pictureURL>https://d365sd3k9yw37.cloudfront.net/a/543325/theme/default/images/person_avatar_70.png</pictureURL><title>Mr</title><firstName>David</firstName><lastName>Cameron</lastName><jobTitle>Prime Minister</jobTitle><organisationId>10185256</organisationId><organisationName>UK Government</organisationName></person><organisation><id>10185222</id><contacts/><pictureURL>https://d365sd3k9yw37.cloudfront.net/a/543325/theme/default/images/org_avatar_70.png</pictureURL><name>foo.com</name></organisation><person><id>10185308</id><contacts><email><id>18565231</id><emailAddress>mc@example.com</emailAddress></email></contacts><pictureURL>https://d365sd3k9yw37.cloudfront.net/a/543325/theme/default/images/person_avatar_70.png</pictureURL><title>Ms</title><firstName>Marie</firstName><lastName>Curie</lastName></person><person><id>10185261</id><contacts><address><id>18565115</id><type>Office</type><street>Deputy Prime Minister's Office&#xD;
+      70 Whitehall</street><city>London</city><zip>SW1A 2AS</zip><country>United Kingdom</country></address><email><id>18565116</id><type>Work</type><emailAddress>dpm@example.com</emailAddress></email></contacts><pictureURL>https://d365sd3k9yw37.cloudfront.net/a/543325/theme/default/images/person_avatar_70.png</pictureURL><title>Mr</title><firstName>Nick</firstName><lastName>Clegg</lastName><jobTitle>Deputy Prime Minister</jobTitle><organisationId>10185256</organisationId><organisationName>UK Government</organisationName></person><person><id>9851220</id><contacts><email><id>18565224</id><emailAddress>tbl@example.com</emailAddress></email></contacts><pictureURL>https://d365sd3k9yw37.cloudfront.net/a/543325/theme/default/images/person_avatar_70.png</pictureURL><title>Prof</title><firstName>Tim</firstName><lastName>Berners-Lee</lastName></person><organisation><id>10185256</id><contacts><email><id>18583945</id><emailAddress>gov@example.com</emailAddress></email></contacts><pictureURL>https://d365sd3k9yw37.cloudfront.net/a/543325/theme/default/images/org_avatar_70.png</pictureURL><name>UK Government</name></organisation></parties>
+    http_version: "1.1"

@@ -1,0 +1,85 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: https://[API-TOKEN]:x@[ACCOUNT-NAME].capsulecrm.com:443/api/party/10185261
+    body: 
+    headers: 
+      user-agent: 
+      - CapsuleCRM ruby gem
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      content-type: 
+      - "*/*"
+      server: 
+      - Apache
+      date: 
+      - Tue, 12 Apr 2011 12:29:03 GMT
+      content-length: 
+      - "709"
+      set-cookie: 
+      - "[SESSION-COOKIE]"
+    body: |-
+      <?xml version="1.0" encoding="UTF-8" standalone="yes"?><person><id>10185261</id><contacts><address><id>18565115</id><type>Office</type><street>Deputy Prime Minister's Office&#xD;
+      70 Whitehall</street><city>London</city><zip>SW1A 2AS</zip><country>United Kingdom</country></address><email><id>18565116</id><type>Work</type><emailAddress>dpm@example.com</emailAddress></email></contacts><pictureURL>https://d365sd3k9yw37.cloudfront.net/a/543325/theme/default/images/person_avatar_70.png</pictureURL><title>Mr</title><firstName>kciN</firstName><lastName>Clegg</lastName><jobTitle>Deputy Prime Minister</jobTitle><organisationId>10185256</organisationId><organisationName>UK Government</organisationName></person>
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :put
+    uri: https://[API-TOKEN]:x@[ACCOUNT-NAME].capsulecrm.com:443/api/person/10185261
+    body: |
+      <?xml version="1.0" encoding="UTF-8"?>
+      <person>
+        <firstName>Nick</firstName>
+      </person>
+
+    headers: 
+      content-type: 
+      - text/xml
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      content-type: 
+      - text/plain; charset=UTF-8
+      server: 
+      - Apache
+      date: 
+      - Tue, 12 Apr 2011 12:29:05 GMT
+      content-length: 
+      - "0"
+      set-cookie: 
+      - "[SESSION-COOKIE]"
+    body: 
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: https://[API-TOKEN]:x@[ACCOUNT-NAME].capsulecrm.com:443/api/party/10185261
+    body: 
+    headers: 
+      user-agent: 
+      - CapsuleCRM ruby gem
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      content-type: 
+      - "*/*"
+      server: 
+      - Apache
+      date: 
+      - Tue, 12 Apr 2011 12:29:06 GMT
+      content-length: 
+      - "709"
+      set-cookie: 
+      - "[SESSION-COOKIE]"
+    body: |-
+      <?xml version="1.0" encoding="UTF-8" standalone="yes"?><person><id>10185261</id><contacts><address><id>18565115</id><type>Office</type><street>Deputy Prime Minister's Office&#xD;
+      70 Whitehall</street><city>London</city><zip>SW1A 2AS</zip><country>United Kingdom</country></address><email><id>18565116</id><type>Work</type><emailAddress>dpm@example.com</emailAddress></email></contacts><pictureURL>https://d365sd3k9yw37.cloudfront.net/a/543325/theme/default/images/person_avatar_70.png</pictureURL><title>Mr</title><firstName>Nick</firstName><lastName>Clegg</lastName><jobTitle>Deputy Prime Minister</jobTitle><organisationId>10185256</organisationId><organisationName>UK Government</organisationName></person>
+    http_version: "1.1"

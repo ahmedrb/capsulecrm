@@ -1,0 +1,59 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: https://[API-TOKEN]:x@[ACCOUNT-NAME].capsulecrm.com:443/api/person
+    body: |
+      <?xml version="1.0" encoding="UTF-8"?>
+      <person>
+        <lastName>Simpson</lastName>
+        <firstName>Homer</firstName>
+      </person>
+
+    headers: 
+      content-type: 
+      - text/xml
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 201
+      message: Created
+    headers: 
+      location: 
+      - https://[ACCOUNT-NAME].capsulecrm.com/api/party/10256313
+      content-type: 
+      - text/plain; charset=UTF-8
+      server: 
+      - Apache
+      date: 
+      - Tue, 12 Apr 2011 12:28:36 GMT
+      content-length: 
+      - "0"
+      set-cookie: 
+      - "[SESSION-COOKIE]"
+    body: 
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: https://[API-TOKEN]:x@[ACCOUNT-NAME].capsulecrm.com:443/api/party/10256313
+    body: 
+    headers: 
+      user-agent: 
+      - CapsuleCRM ruby gem
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      content-type: 
+      - "*/*"
+      server: 
+      - Apache
+      date: 
+      - Tue, 12 Apr 2011 12:28:38 GMT
+      content-length: 
+      - "268"
+      set-cookie: 
+      - "[SESSION-COOKIE]"
+    body: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><person><id>10256313</id><contacts/><pictureURL>https://d365sd3k9yw37.cloudfront.net/a/543325/theme/default/images/person_avatar_70.png</pictureURL><firstName>Homer</firstName><lastName>Simpson</lastName></person>
+    http_version: "1.1"

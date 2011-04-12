@@ -1,0 +1,29 @@
+= CapsuleCRM
+
+This is a ruby wrapper for the CapsuleCRM API.  It is alpha software and should be considered a work in progress.  It currently supports People & Organisations.  There is support for CustomFields & Contacts but they are read-only.
+
+== Installation
+
+  [sudo] gem install capsulecrm
+
+  gem 'capsulecrm' # rails
+  require 'capculecrm' # non-rails
+
+== Getting started
+
+You will need to supply the gem with your CapsuleCRM API token and account name. The account name is the first part of your CapsuleCRM url:
+
+  CapsuleCRM.account_name = "test-account" # http://test-account.capsulecrm.com
+  CapsuleCRM.api_token = 'MY_API_TOKEN'
+  CapsuleCRM.initialize!
+
+If you're using rails, you can put that in config/initializers/capsulecrm.rb
+
+
+== Usage
+
+Please see examples.rb for usage examples
+
+== Feedback
+
+Bug reports, feature requests and patches are welcome.  Please create an issue on the github issue tracker.
