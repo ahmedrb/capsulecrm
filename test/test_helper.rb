@@ -1,5 +1,5 @@
 require 'rubygems'
-require 'ruby-debug'
+# require 'ruby-debug'
 require 'test/unit'
 require 'webmock/test_unit'
 require 'vcr'

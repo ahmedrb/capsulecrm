@@ -63,3 +63,7 @@ person.addresses.first.country  # United Kingdom
 person.custom_fields # CapsuleCRM::Collection
 person.custom_fields.first.label # 'Favourite colour'
 person.custom_fields.first.value # 'Blue'
+
+# CapsuleCRM::Tag (read-only)
+person.tags # CapsuleCRM::Collection
+person.tag_names # ["array", "of all", "tags", "as strings"]

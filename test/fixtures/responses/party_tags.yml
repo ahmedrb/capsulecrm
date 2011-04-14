@@ -1,0 +1,26 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://[API-TOKEN]:x@[ACCOUNT-NAME].capsulecrm.com:443/api/party/10185257/tag
+    body:
+    headers:
+      user-agent:
+      - CapsuleCRM ruby gem
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - "*/*"
+      server:
+      - Apache
+      date:
+      - Tue, 12 Apr 2011 12:31:20 GMT
+      content-length:
+      - "426"
+      set-cookie:
+      - "[SESSION-COOKIE]"
+    body: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><tags size="11"><tag><name>TMT</name></tag><tag><name>Industrials</name></tag><tag><name>Energy</name></tag><tag><name>Consumer</name></tag><tag><name>Healthcare</name></tag><tag><name>Professional Services</name></tag><tag><name>Mid-cap</name></tag><tag><name>Large-cap</name></tag><tag><name>EU</name></tag><tag><name>Asia</name></tag><tag><name>USA</name></tag></tags>
+    http_version: "1.1"

@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Ahmed Adam"]
   s.email       = ["ahmed.msgs@gmail.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/ahmedrb/capsulecrm"
   s.summary     = %q{CapsuleCRM API Gem}
   s.description = %q{CapsuleCRM API Gem}
 

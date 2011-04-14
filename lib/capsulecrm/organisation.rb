@@ -7,7 +7,7 @@ class CapsuleCRM::Organisation < CapsuleCRM::Party
   # nodoc
   def people
     return @people if @people
-    path = self.class.base_path
+    path = self.class.get_path
     path = [path, '/', id, '/people'].join
     last_response = self.class.get(path)
     @people = CapsuleCRM::Person.init_many(last_response)

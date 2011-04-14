@@ -12,13 +12,25 @@ class CapsuleCRM::Party < CapsuleCRM::Base
   # nodoc
   def custom_fields
     return @custom_fields if @custom_fields
-    path = self.class.base_path
+    path = self.class.get_path
     path = [path, '/', id, '/customfield'].join
     last_response = self.class.get(path)
     data = last_response['customFields']['customField']
     @custom_fields = CapsuleCRM::CustomField.init_many(self, data)
   end
 
+  def tags
+    return @tags if @tags
+    path = self.class.get_path
+    path = [path, '/', id, '/tag'].join
+    last_response = self.class.get(path)
+    data = last_response['tags']['tag']
+    @tags = CapsuleCRM::Tag.init_many(self, data)
+  end
+
+  def tag_names
+    tags.map(&:name)
+  end
 
   # nodoc
   def emails
