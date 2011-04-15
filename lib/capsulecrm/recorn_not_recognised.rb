@@ -1,0 +1,1 @@
+class CapsuleCRM::RecordNotRecognised < StandardError; end

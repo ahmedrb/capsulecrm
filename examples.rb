@@ -4,6 +4,11 @@
 # find by id
 person = CapsuleCRM::Person.find 123
 
+# or if you don't know what you are searching for Party
+something = CapsuleCRM::Party.find 123
+something.is?(:person)
+something.is?(:organisation)
+
 # find by email
 person = CapsuleCRM::Person.find_by_email 'foo@example.com'
 
