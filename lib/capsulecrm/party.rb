@@ -47,6 +47,13 @@ class CapsuleCRM::Party < CapsuleCRM::Base
     @phone_numbers = CapsuleCRM::Phone.init_many(self, data)
   end
 
+  # nodoc
+  def websites
+    return @websites if @websites
+    data = raw_data['contacts']['website']
+    @websites = CapsuleCRM::Website.init_many(self, data)
+  end
+
   def is?(kind)
     required_class = kind.to_s.camelize
     self.class.to_s.include? required_class
@@ -77,8 +84,8 @@ class CapsuleCRM::Party < CapsuleCRM::Base
   end
 
   def self.init_one(response)
-    return CapsuleCRM::Person.new(attributes_from_xml_hash(response['person'])) if response['person']
-    return CapsuleCRM::Organisation.new(attributes_from_xml_hash(response['organisation'])) if response['organisation']
+    return CapsuleCRM::Person.init_one(response) if response['person']
+    return CapsuleCRM::Organisation.init_one(response) if response['organisation']
     raise CapsuleCRM::RecordNotRecognised, "Could not recognise returned entity type: #{response}"
   end
 end

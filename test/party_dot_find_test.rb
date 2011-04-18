@@ -18,6 +18,7 @@ class PartyDotFindTest < Test::Unit::TestCase
       @person = CapsuleCRM::Party.find people(:pm)
     end
     assert @person.is?(:person)
+    assert_equal @person.first_name, "David"
   end
 
   # nodoc

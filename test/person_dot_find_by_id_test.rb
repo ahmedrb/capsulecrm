@@ -48,6 +48,10 @@ class PersonDotFindByIdTest < Test::Unit::TestCase
     @person.phone_numbers.each { |pn| assert pn.is_a?(CapsuleCRM::Phone) }
   end
 
+  def test_websites
+    assert_equal CapsuleCRM::ChildCollection, @person.phone_numbers.class
+    assert_equal 1, @person.websites.size
+  end
 
   def teardown
     WebMock.reset!

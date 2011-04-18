@@ -51,6 +51,11 @@ person.phone_numbers # CapsuleCRM::Collection
 person.phone_numbers.first.number # 01234 56789
 person.phone_numbers.first.type   # work
 
+# Contacts: CapsuleCRM::Website (read-only)
+party.websites # CapsuleCRM::Collection
+party.websites.first.url # http://google.com
+party.websites.first.web_address # http://google.com
+
 # Contacts: CapsuleCRM::Email (read-only)
 person.emails # CapsuleCRM::Collection
 person.emails.first.address # 'foo@example.com'
