@@ -21,6 +21,17 @@ class PartyDotFindTest < Test::Unit::TestCase
     assert_equal @person.first_name, "David"
   end
 
+  def test_party_without_contacts
+    VCR.use_cassette('person.find_by_id') do
+      @org = CapsuleCRM::Party.find organisations(:emptyish)
+    end
+
+    fields = %w(emails phone_numbers websites addresses)
+    fields.each do |field|
+      assert @org.send(field).blank?
+    end
+  end
+
   # nodoc
   def teardown
     WebMock.reset!

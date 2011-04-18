@@ -4,7 +4,7 @@ class CapsuleCRM::Party < CapsuleCRM::Base
   # nodoc
   def addresses
     return @addresses if @addresses
-    data = raw_data['contacts']['address']
+    data = raw_data['contacts'].try(:[], 'address')
     @addresses = CapsuleCRM::Address.init_many(self, data)
   end
 
@@ -15,7 +15,7 @@ class CapsuleCRM::Party < CapsuleCRM::Base
     path = self.class.get_path
     path = [path, '/', id, '/customfield'].join
     last_response = self.class.get(path)
-    data = last_response['customFields']['customField']
+    data = last_response['customFields'].try(:[], 'customField')
     @custom_fields = CapsuleCRM::CustomField.init_many(self, data)
   end
 
@@ -24,7 +24,7 @@ class CapsuleCRM::Party < CapsuleCRM::Base
     path = self.class.get_path
     path = [path, '/', id, '/tag'].join
     last_response = self.class.get(path)
-    data = last_response['tags']['tag']
+    data = last_response['tags'].try(:[], 'tag')
     @tags = CapsuleCRM::Tag.init_many(self, data)
   end
 
@@ -35,7 +35,7 @@ class CapsuleCRM::Party < CapsuleCRM::Base
   # nodoc
   def emails
     return @emails if @emails
-    data = raw_data['contacts']['email']
+    data = raw_data['contacts'].try(:[], 'email')
     @emails = CapsuleCRM::Email.init_many(self, data)
   end
 
@@ -43,14 +43,14 @@ class CapsuleCRM::Party < CapsuleCRM::Base
   # nodoc
   def phone_numbers
     return @phone_numbers if @phone_numbers
-    data = raw_data['contacts']['phone']
+    data = raw_data['contacts'].try(:[], 'phone')
     @phone_numbers = CapsuleCRM::Phone.init_many(self, data)
   end
 
   # nodoc
   def websites
     return @websites if @websites
-    data = raw_data['contacts']['website']
+    data = raw_data['contacts'].try(:[], 'website')
     @websites = CapsuleCRM::Website.init_many(self, data)
   end
 

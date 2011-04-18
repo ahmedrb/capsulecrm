@@ -33,7 +33,8 @@ class Test::Unit::TestCase
   # nodoc
   def organisations(key)
     ids = {
-      :gov => 10185256
+      :gov => 10185256,
+      :emptyish => 11111111
     }
     ids[key]
   end
