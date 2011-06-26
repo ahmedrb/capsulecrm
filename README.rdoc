@@ -7,7 +7,7 @@ This is a ruby wrapper for the CapsuleCRM API.  It is alpha software and should 
   [sudo] gem install capsulecrm
 
   gem 'capsulecrm' # rails
-  require 'capculecrm' # non-rails
+  require 'capsulecrm' # non-rails
 
 == Getting started
 
@@ -30,4 +30,4 @@ Bug reports, feature requests and patches are welcome.  Please create an issue o
 
 == License
 
-MIT License. Copyright 2011 Ahmed Adam 
+MIT License. Copyright 2011 Ahmed Adam
